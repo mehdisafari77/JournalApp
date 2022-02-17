@@ -8,22 +8,30 @@
 import UIKit
 
 class EntryDetailViewController: UIViewController {
+    
+    @IBOutlet weak var entryTitleLabel: UILabel!
+    @IBOutlet weak var entryBodyLabel: UITextView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateViews()
         // Do any additional setup after loading the view.
     }
     
+    private func updateViews() {
+        guard let entry = entry, isViewLoaded else { return }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        entryBodyLabel.backgroundColor = .clear
+        entryTitleLabel.text = entry.title
+        entryBodyLabel.text = entry.body
     }
-    */
+
+    var entry: Entry? {
+        didSet {
+            updateViews()
+        }
+    }
 
 }
