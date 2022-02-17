@@ -72,6 +72,4 @@ class EntryTableViewController: UITableViewController {
             detailVC.entry = entry
         }
     }
-
-
 }

@@ -33,5 +33,4 @@ class EntryDetailViewController: UIViewController {
             updateViews()
         }
     }
-
 }
